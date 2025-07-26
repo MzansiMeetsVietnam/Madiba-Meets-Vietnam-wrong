@@ -1,184 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Madiba Meets Mekong - Unique Vietnam tours from South Africa. Discover hidden gems, caves, beaches, and more with one-week trips starting at $400.">
-  <meta name="keywords" content="Vietnam tours, South Africa travel, Phu Quoc, Phong Nha caves, Hanoi, Madiba Meets Mekong">
-  <title>Madiba Meets Mekong - Vietnam Tours from South Africa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Madiba Meets Vietnam - Authentic Adventures Await</title>
+  <meta name="description" content="Explore Vietnam with Madiba Meets Vietnam. Beaches, caves, secret islands, food, and festivals."/>
+  <meta name="keywords" content="Vietnam travel, Phu Quoc, Ha Long Bay, Mekong Delta, Afro travel, tours"/>
+  <meta name="author" content="Madiba Meets Vietnam"/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Arial', sans-serif; }
-    .hero-bg { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
-    .whatsapp-btn:hover { transform: scale(1.05); transition: transform 0.2s; }
-    #map { height: 400px; width: 100%; }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7/babel.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY" async defer></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <!-- Navigation -->
-  <nav class="bg-green-700 text-white p-4 sticky top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Madiba Meets Mekong</h1>
-      <div class="space-x-4">
-        <a href="index.html" class="hover:text-yellow-300">Home</a>
-        <a href="south-vietnam.html" class="hover:text-yellow-300">South Vietnam</a>
-        <a href="central-vietnam.html" class="hover:text-yellow-300">Central Vietnam</a>
-        <a href="north-vietnam.html" class="hover:text-yellow-300">North Vietnam</a>
-        <a href="boat-braai-tours.html" class="hover:text-yellow-300">Boat & Braai</a>
-        <a href="visa-travel-tips.html" class="hover:text-yellow-300">Travel Tips</a>
-        <a href="articles-events.html" class="hover:text-yellow-300">Articles</a>
-        <a href="contact-booking.html" class="hover:text-yellow-300">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-bg bg-cover bg-center h-96 flex items-center justify-center text-white">
-    <div class="text-center bg-black bg-opacity-50 p-6 rounded">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Not Just a Tour — A Journey From Africa to Zululand</h1>
-      <p class="text-lg mb-6">Discover Vietnam’s hidden gems with one-week tours starting at $400.</p>
-      <a href="https://wa.me/+27794720078" target="_blank" class="whatsapp-btn bg-yellow-400 text-green-900 px-6 py-3 rounded-full font-semibold">Book Now via WhatsApp</a>
-    </div>
-  </section>
+<body class="bg-gray-100">
+  <div id="root"></div>
 
-  <!-- Founder Story -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Meet the Founder</h2>
-      <p class="max-w-2xl mx-auto text-lg">
-        Born on a farm in Zululand, I’ve spent 8 years exploring Vietnam’s hidden corners — from the jungles of Phong Nha to the beaches of Phu Quoc. 
-        Madiba Meets Mekong isn’t just a tour company; we show you the real Vietnam, the gems no one else finds. 
-        Let’s explore the caves, festivals, and flavors together!
-      </p>
-    </div>
-  </section>
+  <script type="text/babel">
 
-  <!-- Destinations -->
-  <section class="py-12 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Explore Vietnam’s Hidden Gems</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- South Vietnam -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1598961940731-5e3c9a2e3b00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Phu Quoc Beach" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold">South Vietnam</h3>
-            <p class="text-gray-600">Phu Quoc’s beaches, HCMC’s buzz, Nha Trang’s islands. Snorkel, braai, or dance with DJ upgrades.</p>
-            <a href="south-vietnam.html" class="text-green-700 hover:underline mt-2 inline-block">Discover Tours</a>
+    function NavBar() {
+      return (
+        <nav className="bg-green-700 text-white p-4 sticky top-0 shadow-md z-50">
+          <div className="container mx-auto flex justify-between">
+            <h1 className="text-2xl font-bold">Madiba Meets Vietnam</h1>
+            <div className="space-x-4">
+              <a href="#map" className="hover:text-yellow-300">Map</a>
+              <a href="#tours" className="hover:text-yellow-300">Tours</a>
+              <a href="#gallery" className="hover:text-yellow-300">Gallery</a>
+              <a href="#testimonials" className="hover:text-yellow-300">Reviews</a>
+              <a href="#contact" className="hover:text-yellow-300">Contact</a>
+            </div>
           </div>
-        </div>
-        <!-- Central Vietnam -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1504457047772-27faf0c8ec96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Phong Nha Caves" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold">Central Vietnam</h3>
-            <p class="text-gray-600">Hue’s history, Da Nang’s fireworks, Phong Nha’s epic caves. Adventure awaits!</p>
-            <a href="central-vietnam.html" class="text-green-700 hover:underline mt-2 inline-block">Discover Tours</a>
-          </div>
-        </div>
-        <!-- North Vietnam -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ha Long Bay" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold">North Vietnam</h3>
-            <p class="text-gray-600">Hanoi’s charm, Sapa’s treks, Ha Long Bay’s beauty. Unforgettable journeys.</p>
-            <a href="north-vietnam.html" class="text-green-700 hover:underline mt-2 inline-block">Discover Tours</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Map -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Explore Vietnam on the Map</h2>
-      <div id="map"></div>
-    </div>
-  </section>
-
-  <!-- Boat & Braai Tours -->
-  <section class="py-12 bg-green-50">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Boat & Braai Tours</h2>
-      <p class="max-w-2xl mx-auto text-lg mb-6">
-        Sail Phu Quoc or Nha Trang with private or big boat options. Add a braai, DJ, or live music for the ultimate vibe. 
-        One-week tours start at $400.
-      </p>
-      <a href="boat-braai-tours.html" class="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800">Explore Boat Tours</a>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <section class="py-12 bg-yellow-400 text-center">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">Ready to Explore Vietnam?</h2>
-      <p class="text-lg mb-6">Book your one-week adventure starting at $400. Connect with us now!</p>
-      <div class="flex justify-center space-x-4">
-        <a href="https://wa.me/+27794720078" target="_blank" class="whatsapp-btn bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800 flex items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2"> WhatsApp
-        </a>
-        <a href="mailto:bookings@madibameetsmekong.com" class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">Email Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-green-700 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 Madiba Meets Mekong. All rights reserved. Photos by Unsplash.</p>
-      <p class="mt-2">Follow us: <a href="#" class="underline">Instagram</a> | <a href="#" class="underline">Facebook</a></p>
-    </div>
-  </footer>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=marker" async defer></script>
-  <script>
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Google Maps initialization
-    function initMap() {
-      const vietnam = { lat: 16.0471, lng: 108.2068 }; // Center of Vietnam
-      const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6,
-        center: vietnam
-      });
-
-      // Markers for regions
-      const markers = [
-        {
-          position: { lat: 10.7769, lng: 106.7009 }, // HCMC (South)
-          title: 'South Vietnam',
-          url: 'south-vietnam.html'
-        },
-        {
-          position: { lat: 16.0544, lng: 108.2022 }, // Da Nang (Central)
-          title: 'Central Vietnam',
-          url: 'central-vietnam.html'
-        },
-        {
-          position: { lat: 21.0278, lng: 105.8342 }, // Hanoi (North)
-          title: 'North Vietnam',
-          url: 'north-vietnam.html'
-        }
-      ];
-
-      markers.forEach(marker => {
-        const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
-          position: marker.position,
-          map: map,
-          title: marker.title
-        });
-        advancedMarker.addListener('click', () => {
-          window.location.href = marker.url;
-        });
-      });
+        </nav>
+      );
     }
+
+    function GoogleMap() {
+      React.useEffect(() => {
+        if (!window.google || !window.google.maps) return;
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 16.0, lng: 108.0 },
+          zoom: 6,
+        });
+
+        const destinations = [
+          { name: 'Phu Quoc', lat: 10.2239, lng: 103.9572 },
+          { name: 'Ha Long Bay', lat: 20.9101, lng: 107.1839 },
+          { name: 'Ho Chi Minh City', lat: 10.7769, lng: 106.7009 },
+          { name: 'Nha Trang', lat: 12.2388, lng: 109.1967 },
+          { name: 'Da Lat', lat: 11.9404, lng: 108.4583 },
+          { name: 'Dak Lak', lat: 12.7100, lng: 108.2378 },
+          { name: 'Mekong Delta', lat: 10.0480, lng: 105.7563 },
+        ];
+
+        destinations.forEach(dest => {
+          const marker = new google.maps.Marker({
+            position: { lat: dest.lat, lng: dest.lng },
+            map,
+            title: dest.name,
+          });
+
+          marker.addListener("click", () => {
+            alert(`Explore: ${dest.name}`);
+          });
+        });
+      }, []);
+
+      return <div id="map" className="w-full h-96 rounded-xl shadow-lg mb-6"></div>;
+    }
+
+    function TourCard({ title, description, image }) {
+      return (
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src={image} alt={title} className="w-full h-48 object-cover"/>
+          <div className="p-4">
+            <h3 className="text-xl font-bold text-green-700">{title}</h3>
+            <p className="text-gray-600 mt-2">{description}</p>
+          </div>
+        </div>
+      );
+    }
+
+    function GalleryImage({ src, alt }) {
+      return (
+        <img src={src} alt={alt} className="rounded-lg shadow w-full h-48 object-cover hover:scale-105 transition"/>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <NavBar />
+
+          <section className="p-6 bg-white">
+            <h2 className="text-3xl font-bold text-green-800 mb-4">Welcome to Madiba Meets Vietnam</h2>
+            <p className="text-gray-700 max-w-3xl">
+              Founded by a farm boy from Zululand, Madiba Meets Vietnam offers affordable, unforgettable adventures across Vietnam. From braai boat cruises to secret islands, it’s your VIP local connection.
+            </p>
+          </section>
+
+          <section id="map" className="p-6 bg-gray-50">
+            <h2 className="text-2xl font-bold text-green-800 mb-4">Explore Destinations</h2>
+            <GoogleMap />
+          </section>
+
+          <section id="tours" className="p-6 bg-white">
+            <h2 className="text-2xl font-bold text-green-800 mb-6">Top Tours</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <TourCard title="Big Boat Braai – Nha Trang" description="BBQ on the water with optional DJ or live band!" image="https://images.unsplash.com/photo-1549921296-3a6b5ce04c7d" />
+              <TourCard title="Secret Island Speedboat – Phu Quoc" description="Private island, grilled meat, paradise beach!" image="https://images.unsplash.com/photo-1594007654729-89a6b9fae0c3" />
+              <TourCard title="Mekong Floating Market Tour" description="Real local market with tropical fruits and culture." image="https://images.unsplash.com/photo-1598454445278-6dfd9e637bbd" />
+            </div>
+          </section>
+
+          <section id="gallery" className="p-6 bg-gray-50">
+            <h2 className="text-2xl font-bold text-green-800 mb-6">Gallery</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <GalleryImage src="https://images.unsplash.com/photo-1594007654729-89a6b9fae0c3" alt="Phu Quoc" />
+              <GalleryImage src="https://images.unsplash.com/photo-1563284295-067f0b5e0efb" alt="Halong Bay" />
+              <GalleryImage src="https://images.unsplash.com/photo-1508655143714-3e3b49e397f5" alt="Mekong" />
+              <GalleryImage src="https://images.unsplash.com/photo-1587032035291-5e372fbfcf66" alt="Da Lat" />
+            </div>
+          </section>
+
+          <section id="testimonials" className="p-6 bg-white">
+            <h2 className="text-2xl font-bold text-green-800 mb-6">What Guests Say</h2>
+            <div className="space-y-4">
+              <p className="bg-green-50 p-4 rounded shadow">“Best trip of my life! Braai on a boat and that secret beach... wow!” – Sipho, South Africa</p>
+              <p className="bg-green-50 p-4 rounded shadow">“Hugh showed us a Vietnam no other tourist sees. Just amazing.” – Zama, Cape Town</p>
+              <p className="bg-green-50 p-4 rounded shadow">“So easy to book and such a vibe. Highly recommend.” – Thabo, Durban</p>
+            </div>
+          </section>
+
+          <section id="contact" className="p-6 bg-gray-50">
+            <h2 className="text-2xl font-bold text-green-800 mb-4">Book Your Trip</h2>
+            <form className="bg-white p-6 rounded shadow-md max-w-md mx-auto space-y-4">
+              <input type="text" placeholder="Your Name" className="w-full border p-2 rounded"/>
+              <input type="email" placeholder="Your Email" className="w-full border p-2 rounded"/>
+              <textarea placeholder="What are you interested in?" className="w-full border p-2 rounded h-24"></textarea>
+              <button type="submit" className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800">Submit</button>
+            </form>
+            <div className="text-center mt-4">
+              <a href="https://wa.me/27794720078" target="_blank" className="inline-block bg-green-600 text-white px-6 py-2 rounded mt-4 hover:bg-green-700">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </section>
+
+          <footer className="bg-green-700 text-white text-center p-4 mt-6">
+            &copy; 2025 Madiba Meets Vietnam. All rights reserved.
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
   </script>
 </body>
 </html>
